@@ -1,23 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
 const App: React.FC = () => {
+  const [count, setCount] = useState(11)
+
+  const incrementCount = () => {
+    setCount(count + 1)
+  }
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+        <p data-testid="counter-title">
+          Counter
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <button data-testid="incrementBtn" onClick={incrementCount}>
+          +
+        </button>
+
+        <span data-testid="counterValue">{count}</span>
+
+        <button data-testid="decrementBtn">
+          -
+        </button>
+
       </header>
     </div>
   );
