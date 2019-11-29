@@ -1,3 +1,3 @@
 export const externalServiceCall = (value: number) : number => {
-    return value
+    return value * 2
 }
